@@ -1,0 +1,118 @@
+/* Reset all setting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Assigning of value to a word to use over with need to write it when used in multiple place for easy editing for future reference */
+:root {
+  --white-color: white;
+}
+
+/* container div */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 0.2fr;
+  grid-template-areas: "designer programmer"
+  "footer footer";
+  font-family: sans-serif;
+}
+
+/* styles that are same for both container and button div to avoid repitition */
+.container, .btn {
+  color: var(--white-color);
+}
+
+/* styles that are same for both designer and programmer div to avoid repitition */
+.designer, .programmer {
+  display: flex;
+  flex-direction: column;
+  height: 97.5vh;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: top-center;
+  background-size: cover;
+}
+
+/* styling for designer div */
+.designer {
+  grid-area: designer;
+  background-image: url("https://img.freepik.com/free-vector/royal-watercolor-valentine-red-background_1340-4006.jpg?t=st=1706011710~exp=1706012310~hmac=a4ce68296e65c0d6915e3f323568179ef435ad49103c75e556c5c0457a8a91b1");
+}
+
+/* styling for programmer div */
+.programmer {
+  grid-area: programmer;
+  background-image: url("https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+
+/* styling for the h1 element */
+.heading {
+  font-size: 40px;
+}
+
+/* styling for button element */
+.btn {
+  background: transparent;
+  border: 3px solid var(--white-color);
+  padding: 15px 40px;
+  margin: 20px 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* when button is clicked on */
+.btn:active {
+transform: scale(0.8);
+border-color: darkblue;
+background-color: darkblue;
+}
+
+/* Footer div */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  grid-area: footer;
+  display: flex;
+  justify-content: right;
+  padding-right: 15px;
+}
+
+footer p {
+  font-weight: 600;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer span {
+  font-style: italic;
+  font-size: 10px;
+  color: black;
+}
+
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 700px) {
+ .heading {
+  font-size: 20px;
+ }
+
+ .btn {
+  padding: 5px 10px;
+  font-weight: 200;
+ }
+
+footer {
+  justify-content: center;
+  padding: 0;
+}
+
+}
+
+
